@@ -1,0 +1,15 @@
+{
+    "name": "dannydan/dan",
+    "authors": [
+        {
+            "name": "Rainforest-tech",
+            "email": "benzema-benarfa@bk.ru"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^5.3"
+    },
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
