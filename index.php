@@ -1,12 +1,18 @@
 <?php
 require 'vendor/autoload.php';
 
-$pdo = new PDO('mysql:host=localhost; dbname=test','root', '');
-$sql = 'SELECT * FROM tasks';
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-//dump($tasks);die;
+
+function getAllTasks()
+{
+    $pdo = new PDO('mysql:host=localhost; dbname=test','root', '');
+    $sql = 'SELECT * FROM tasks';
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $tasks;
+}
+
+$tasks = getAllTasks();
 ?>
 
 
