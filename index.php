@@ -1,18 +1,13 @@
 <?php
 require 'vendor/autoload.php';
 
+require 'database/QueryBuilder.php';
 
-function getAllTasks()
-{
-    $pdo = new PDO('mysql:host=localhost; dbname=test','root', '');
-    $sql = 'SELECT * FROM tasks';
-    $statement = $pdo->prepare($sql);
-    $statement->execute();
-    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $tasks;
-}
+$db = new QueryBuilder;
 
-$tasks = getAllTasks();
+
+
+$tasks = $db->getAllTasks();
 ?>
 
 

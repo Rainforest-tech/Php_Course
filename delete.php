@@ -1,10 +1,10 @@
 <?php
 
-$id = $_GET['id'];
-$sql = 'DELETE  FROM tasks WHERE id=:id';
-$pdo = new PDO('mysql:host=localhost; dbname=test;', 'root', '');
-$statement = $pdo->prepare($sql);
-$statement->bindParam(':id', $id);
-$statement->execute();
+require 'database/QueryBuilder.php';
 
-header('Location: /kazazh_php'); exit;
+$db = new QueryBuilder;
+
+
+$id = $_GET['id'];
+
+$db->deleteTask($id);
